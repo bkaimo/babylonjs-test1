@@ -1,0 +1,295 @@
+{
+    "asset": {
+        "copyright": "(C)2022 bkaimo",
+        "generator": "maya2glTF main fbbc95e5dc4d",
+        "version": "2.0"
+    },
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0,
+    "nodes": [
+        {
+            "name": "Garage_20x20x10",
+            "mesh": 0
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Garage_20x20xShape10",
+            "extras": {
+                "targetNames": []
+            },
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 1,
+                        "POSITION": 2,
+                        "TANGENT": 3,
+                        "TEXCOORD_0": 4
+                    },
+                    "indices": 0,
+                    "mode": 4,
+                    "material": 0
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 6,
+                        "POSITION": 7,
+                        "TANGENT": 8,
+                        "TEXCOORD_0": 9
+                    },
+                    "indices": 5,
+                    "mode": 4,
+                    "material": 1
+                }
+            ]
+        }
+    ],
+    "materials": [
+        {
+            "name": "M_GarageWall01",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.7381333708763123,
+                    0.7381333708763123,
+                    0.7381333708763123,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        },
+        {
+            "name": "M_GarageFloor01",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.24533334374427796,
+                    0.24533334374427796,
+                    0.24533334374427796,
+                    1.0
+                ],
+                "metallicFactor": 0.0,
+                "roughnessFactor": 1.0
+            }
+        }
+    ],
+    "accessors": [
+        {
+            "name": "Garage_20x20xShape10#0/indices",
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 42,
+            "max": [
+                27
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Garage_20x20xShape10#0/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 28,
+            "max": [
+                1.0,
+                0.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Garage_20x20xShape10#0/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 336,
+            "componentType": 5126,
+            "count": 28,
+            "max": [
+                304.79998779296877,
+                304.79998779296877,
+                304.79998779296877
+            ],
+            "min": [
+                -304.79998779296877,
+                0.0,
+                -304.79998779296877
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Garage_20x20xShape10#0/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 28,
+            "max": [
+                1.0,
+                0.5729027390480042,
+                1.0,
+                -1.0
+            ],
+            "min": [
+                0.0,
+                -0.5039385557174683,
+                -1.0,
+                -1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Garage_20x20xShape10#0/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 28,
+            "max": [
+                0.875,
+                0.875
+            ],
+            "min": [
+                0.125,
+                0.375
+            ],
+            "type": "VEC2"
+        },
+        {
+            "name": "Garage_20x20xShape10#1/indices",
+            "bufferView": 0,
+            "byteOffset": 84,
+            "componentType": 5123,
+            "count": 24,
+            "max": [
+                8
+            ],
+            "min": [
+                0
+            ],
+            "type": "SCALAR"
+        },
+        {
+            "name": "Garage_20x20xShape10#1/vertices/NORMAL",
+            "bufferView": 1,
+            "byteOffset": 672,
+            "componentType": 5126,
+            "count": 9,
+            "max": [
+                0.0,
+                1.0,
+                0.0
+            ],
+            "min": [
+                0.0,
+                1.0,
+                0.0
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Garage_20x20xShape10#1/vertices/POSITION",
+            "bufferView": 1,
+            "byteOffset": 780,
+            "componentType": 5126,
+            "count": 9,
+            "max": [
+                304.79998779296877,
+                0.0,
+                304.79998779296877
+            ],
+            "min": [
+                -304.79998779296877,
+                0.0,
+                -304.79998779296877
+            ],
+            "type": "VEC3"
+        },
+        {
+            "name": "Garage_20x20xShape10#1/vertices/TANGENT",
+            "bufferView": 2,
+            "byteOffset": 448,
+            "componentType": 5126,
+            "count": 9,
+            "max": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "min": [
+                1.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "type": "VEC4"
+        },
+        {
+            "name": "Garage_20x20xShape10#1/vertices/TEXCOORD_0",
+            "bufferView": 3,
+            "byteOffset": 224,
+            "componentType": 5126,
+            "count": 9,
+            "max": [
+                1.0,
+                1.0
+            ],
+            "min": [
+                0.0,
+                0.0
+            ],
+            "type": "VEC2"
+        }
+    ],
+    "bufferViews": [
+        {
+            "name": "Garage_20x20x10/data/indices-2",
+            "buffer": 0,
+            "byteOffset": 1776,
+            "byteLength": 132,
+            "target": 34963
+        },
+        {
+            "name": "Garage_20x20x10/data/vertices-12",
+            "buffer": 0,
+            "byteOffset": 592,
+            "byteLength": 888,
+            "byteStride": 12,
+            "target": 34962
+        },
+        {
+            "name": "Garage_20x20x10/data/vertices-16",
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 592,
+            "byteStride": 16,
+            "target": 34962
+        },
+        {
+            "name": "Garage_20x20x10/data/vertices-8",
+            "buffer": 0,
+            "byteOffset": 1480,
+            "byteLength": 296,
+            "byteStride": 8,
+            "target": 34962
+        }
+    ],
+    "buffers": [
+        {
+            "name": "Garage_20x20x10/data",
+            "byteLength": 1908,
+            "uri": "Garage_20x20x100.bin"
+        }
+    ]
+}
