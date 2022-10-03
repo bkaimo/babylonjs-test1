@@ -109,7 +109,8 @@
 	
 	//new BABYLON.CubeTexture.CreateFromPrefilteredData("https://playground.babylonjs.com/textures/", "environment.dds", scene);
 	
-	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "Garage_20x20x10.gltf", scene);
+	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "Garage_20x20x10.glb", scene);
+	scene.isPickable = false
 	
 	var startingPoint;
     var currentMesh;
