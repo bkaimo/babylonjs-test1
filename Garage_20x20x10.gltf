@@ -170,9 +170,9 @@
             "bufferView": 0,
             "byteOffset": 84,
             "componentType": 5123,
-            "count": 24,
+            "count": 12,
             "max": [
-                8
+                5
             ],
             "min": [
                 0
@@ -184,7 +184,7 @@
             "bufferView": 1,
             "byteOffset": 672,
             "componentType": 5126,
-            "count": 9,
+            "count": 6,
             "max": [
                 0.0,
                 1.0,
@@ -200,9 +200,9 @@
         {
             "name": "Garage_20x20xShape10#1/vertices/POSITION",
             "bufferView": 1,
-            "byteOffset": 780,
+            "byteOffset": 744,
             "componentType": 5126,
-            "count": 9,
+            "count": 6,
             "max": [
                 304.79998779296877,
                 0.0,
@@ -220,7 +220,7 @@
             "bufferView": 2,
             "byteOffset": 448,
             "componentType": 5126,
-            "count": 9,
+            "count": 6,
             "max": [
                 1.0,
                 0.0,
@@ -240,7 +240,7 @@
             "bufferView": 3,
             "byteOffset": 224,
             "componentType": 5126,
-            "count": 9,
+            "count": 6,
             "max": [
                 1.0,
                 1.0
@@ -256,15 +256,15 @@
         {
             "name": "Garage_20x20x10/data/indices-2",
             "buffer": 0,
-            "byteOffset": 1776,
-            "byteLength": 132,
+            "byteOffset": 1632,
+            "byteLength": 108,
             "target": 34963
         },
         {
             "name": "Garage_20x20x10/data/vertices-12",
             "buffer": 0,
-            "byteOffset": 592,
-            "byteLength": 888,
+            "byteOffset": 544,
+            "byteLength": 816,
             "byteStride": 12,
             "target": 34962
         },
@@ -272,15 +272,15 @@
             "name": "Garage_20x20x10/data/vertices-16",
             "buffer": 0,
             "byteOffset": 0,
-            "byteLength": 592,
+            "byteLength": 544,
             "byteStride": 16,
             "target": 34962
         },
         {
             "name": "Garage_20x20x10/data/vertices-8",
             "buffer": 0,
-            "byteOffset": 1480,
-            "byteLength": 296,
+            "byteOffset": 1360,
+            "byteLength": 272,
             "byteStride": 8,
             "target": 34962
         }
@@ -288,7 +288,7 @@
     "buffers": [
         {
             "name": "Garage_20x20x10/data",
-            "byteLength": 1908,
+            "byteLength": 1740,
             "uri": "Garage_20x20x100.bin"
         }
     ]

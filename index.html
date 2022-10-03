@@ -20,6 +20,7 @@
         <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
         <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
         <script src="https://preview.babylonjs.com/inspector/babylon.inspector.bundle.js"></script>
+		<script src="https://cdn.babylonjs.com/babylon.glTFFileLoader.js"></script>
 
         <style>
             html, body {
@@ -59,28 +60,119 @@
     const scene = new BABYLON.Scene(engine);
 
     // This creates and positions a free camera (non-mesh)
-    const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 5, -10), scene);
+    // const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 100, 800), scene);
+	
+	//Adding an Arc Rotate Camera
+    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 100, 800, new BABYLON.Vector3(0, 0, 0), scene);
+	camera.wheelDeltaPercentage =0.1;
+	camera.upperRadiusLimit = 1000
+	camera.panningSensibility = 100;
+	camera.targetScreenOffset.x = 0;
+	camera.targetScreenOffset.y = -120;
 
-    // This targets the camera to scene origin
-    camera.setTarget(BABYLON.Vector3.Zero());
+    // This positions the camera
+    camera.setPosition(new BABYLON.Vector3(0, 100, 800));
 
     // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
+	
+	// This targets the camera to scene origin
+    //camera.setTarget(BABYLON.Vector3.Zero());
+
+    // This attaches the camera to the canvas
+    //camera.attachControl(canvas, true);
+	
+	//Adding a light
+    var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 600, 0), scene);
+	light.intensity = .75;
 
     // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 1, 0), scene);
+    //const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 150, 0), scene);
 
     // Default intensity is 1. Let's dim the light a small amount
-    light.intensity = 0.7;
+    //light.intensity = 1;
 
     // Our built-in 'sphere' shape.
-    const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 2, segments: 32}, scene);
+    const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 200, segments: 32}, scene);
 
     // Move the sphere upward 1/2 its height
-    sphere.position.y = 1;
+    sphere.position.x = 100;
+	sphere.position.y = 100;
 
-    // Our built-in 'ground' shape.
-    const ground = BABYLON.MeshBuilder.CreateGround("ground", {width: 6, height: 6}, scene);
+    var groundMaterial = new BABYLON.StandardMaterial("ground", scene);
+    groundMaterial.specularColor = BABYLON.Color3.Black();
+	
+	// Our built-in 'ground' shape.
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width:1000, height:1000}, scene, false);
+    ground.material = groundMaterial;
+	ground.isVisible = false
+	
+	//new BABYLON.CubeTexture.CreateFromPrefilteredData("https://playground.babylonjs.com/textures/", "environment.dds", scene);
+	
+	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "Garage_20x20x10.gltf", scene);
+	
+	var startingPoint;
+    var currentMesh;
+
+    var getGroundPosition = function () {
+        var pickinfo = scene.pick(scene.pointerX, scene.pointerY, function (mesh) { return mesh == ground; });
+        if (pickinfo.hit) {
+            return pickinfo.pickedPoint;
+        }
+
+        return null;
+    }
+
+    var pointerDown = function (mesh) {
+            currentMesh = mesh;
+            startingPoint = getGroundPosition();
+            if (startingPoint) { // we need to disconnect camera from canvas
+                setTimeout(function () {
+                    camera.detachControl(canvas);
+                }, 0);
+            }
+    }
+
+    var pointerUp = function () {
+        if (startingPoint) {
+            camera.attachControl(canvas, true);
+            startingPoint = null;
+            return;
+        }
+    }
+
+    var pointerMove = function () {
+        if (!startingPoint) {
+            return;
+        }
+        var current = getGroundPosition();
+        if (!current) {
+            return;
+        }
+
+        var diff = current.subtract(startingPoint);
+        currentMesh.position.addInPlace(diff);
+
+        startingPoint = current;
+
+    }
+
+    scene.onPointerObservable.add((pointerInfo) => {      		
+        switch (pointerInfo.type) {
+			case BABYLON.PointerEventTypes.POINTERDOWN:
+				if(pointerInfo.pickInfo.hit && pointerInfo.pickInfo.pickedMesh != ground) {
+                    pointerDown(pointerInfo.pickInfo.pickedMesh)
+                }
+				break;
+			case BABYLON.PointerEventTypes.POINTERUP:
+                    pointerUp();
+				break;
+			case BABYLON.PointerEventTypes.POINTERMOVE:          
+                    pointerMove();
+				break;
+        }
+    });
+
 
     return scene;
 };
