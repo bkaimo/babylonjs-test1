@@ -93,7 +93,7 @@
     const light = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(0, 150, 0), scene);
 
     // Default intensity is 1. Let's dim the light a small amount
-    light.intensity = 20;
+    light.intensity = 1;
 
     // Our built-in 'sphere' shape.
     // const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 200, segments: 32}, scene);
@@ -117,7 +117,7 @@
     groundMaterial.specularColor = BABYLON.Color3.Black();
 	
 	// Our built-in 'ground' shape.
-    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width:1000, height:1000}, scene, false);
+    var ground = BABYLON.MeshBuilder.CreateGround("ground", {width:300, height:300}, scene, false);
     ground.material = groundMaterial;
 	ground.isVisible = true
 	
