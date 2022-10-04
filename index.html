@@ -86,14 +86,14 @@
     //camera.attachControl(canvas, true);
 	
 	//Adding a light
-    var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 600, 0), scene);
-	light.intensity = .75;
+    //var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 600, 0), scene);
+	//light.intensity = .75;
 
     // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
-    //const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 150, 0), scene);
+    const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(0, 150, 0), scene);
 
     // Default intensity is 1. Let's dim the light a small amount
-    //light.intensity = 1;
+    light.intensity = .75;
 
     // Our built-in 'sphere' shape.
     // const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 200, segments: 32}, scene);
@@ -110,7 +110,7 @@
     ground.material = groundMaterial;
 	ground.isVisible = true
 	
-	//new BABYLON.CubeTexture.CreateFromPrefilteredData("https://playground.babylonjs.com/textures/", "environment.dds", scene);
+	// new BABYLON.CubeTexture.CreateFromPrefilteredData("", "https://bkaimo.github.io/babylonjs-test1/textures/", "environment.dds", scene);
 	
 	// BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "Garage_20x20x10.glb", scene);
 	// scene.isPickable = false
