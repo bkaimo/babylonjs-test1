@@ -103,12 +103,15 @@
 	// sphere.position.y = 100;
 	
 	// Skybox
-    var skybox = BABYLON.MeshBuilder.CreateBox("SkyBox", {size:1000.0}, scene);
-    var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
-    skyboxMaterial.backFaceCulling = false;
-    skyboxMaterial.reflectionTexture = new BABYLON.HDRCubeTexture("textures/room.hdr", scene, 512);
-    skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
-    skybox.material = skyboxMaterial;
+    // var skybox = BABYLON.MeshBuilder.CreateBox("SkyBox", {size:1000.0}, scene);
+    // var skyboxMaterial = new BABYLON.StandardMaterial("skyBox", scene);
+    // skyboxMaterial.backFaceCulling = false;
+    // skyboxMaterial.reflectionTexture = new BABYLON.HDRCubeTexture("https://bkaimo.github.io/babylonjs-test1/textures/environment.hdr", scene, 512);
+    // skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
+    // skybox.material = skyboxMaterial;
+	
+	var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("https://bkaimo.github.io/babylonjs-test1/textures/environment.env", scene);
+	scene.environmentTexture = hdrTexture;
 
     var groundMaterial = new BABYLON.StandardMaterial("ground", scene);
     groundMaterial.specularColor = BABYLON.Color3.Black();
