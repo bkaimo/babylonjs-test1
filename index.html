@@ -95,11 +95,11 @@
     //light.intensity = 1;
 
     // Our built-in 'sphere' shape.
-    const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 200, segments: 32}, scene);
+    // const sphere = BABYLON.MeshBuilder.CreateSphere("sphere", {diameter: 200, segments: 32}, scene);
 
     // Move the sphere upward 1/2 its height
-    sphere.position.x = 100;
-	sphere.position.y = 100;
+    // sphere.position.x = 100;
+	// sphere.position.y = 100;
 
     var groundMaterial = new BABYLON.StandardMaterial("ground", scene);
     groundMaterial.specularColor = BABYLON.Color3.Black();
@@ -107,12 +107,14 @@
 	// Our built-in 'ground' shape.
     var ground = BABYLON.MeshBuilder.CreateGround("ground", {width:1000, height:1000}, scene, false);
     ground.material = groundMaterial;
-	ground.isVisible = false
+	ground.isVisible = true
 	
 	//new BABYLON.CubeTexture.CreateFromPrefilteredData("https://playground.babylonjs.com/textures/", "environment.dds", scene);
 	
-	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "Garage_20x20x10.glb", scene);
-	scene.isPickable = false
+	// BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "Garage_20x20x10.glb", scene);
+	// scene.isPickable = false
+	
+	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "StorageCabinetOrganizer_12Drawers.glb", scene);
 	
 	//if (m.name.includes("Garage")) {
     //m.isVisible = true;
