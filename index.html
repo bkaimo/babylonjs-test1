@@ -59,7 +59,9 @@
     // This creates a basic Babylon Scene object (non-mesh)
     const scene = new BABYLON.Scene(engine);
 
-    // This creates and positions a free camera (non-mesh)
+    scene.clearColor = new BABYLON.Color3(1, 1, 1);
+	
+	// This creates and positions a free camera (non-mesh)
     // const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 100, 800), scene);
 	
 	//Adding an Arc Rotate Camera
@@ -112,6 +114,11 @@
 	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "Garage_20x20x10.glb", scene);
 	scene.isPickable = false
 	
+	//if (m.name.includes("Garage")) {
+    //m.isVisible = true;
+    //m.isPickable = false;
+	//}
+		
 	var startingPoint;
     var currentMesh;
 
