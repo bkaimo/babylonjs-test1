@@ -86,8 +86,8 @@
     //camera.attachControl(canvas, true);
 	
 	//Adding a light
-    var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 400, 0), scene);
-	light.intensity = 1;
+    //var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 300, 0), scene);
+	//light.intensity = 1;
 
     // This creates a light, aiming 0,1,0 - to the sky (non-mesh)
     // const light = new BABYLON.PointLight("pointLight", new BABYLON.Vector3(0, 150, 0), scene);
@@ -110,7 +110,7 @@
     // skyboxMaterial.reflectionTexture.coordinatesMode = BABYLON.Texture.SKYBOX_MODE;
     // skybox.material = skyboxMaterial;
 	
-	var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("https://bkaimo.github.io/babylonjs-test1/textures/environment.env", scene);
+	var hdrTexture = BABYLON.CubeTexture.CreateFromPrefilteredData("https://bkaimo.github.io/babylonjs-test1/textures/parking.env", scene);
 	scene.environmentTexture = hdrTexture;
 
     var groundMaterial = new BABYLON.StandardMaterial("ground", scene);
