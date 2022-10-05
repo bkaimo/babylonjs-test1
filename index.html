@@ -133,67 +133,7 @@
     //m.isPickable = false;
 	//}
 		
-	var startingPoint;
-    var currentMesh;
 
-    var getGroundPosition = function () {
-        var pickinfo = scene.pick(scene.pointerX, scene.pointerY, function (mesh) { return mesh == ground; });
-        if (pickinfo.hit) {
-            return pickinfo.pickedPoint;
-        }
-
-        return null;
-    }
-
-    var pointerDown = function (mesh) {
-            currentMesh = mesh;
-            startingPoint = getGroundPosition();
-            if (startingPoint) { // we need to disconnect camera from canvas
-                setTimeout(function () {
-                    camera.detachControl(canvas);
-                }, 0);
-            }
-    }
-
-    var pointerUp = function () {
-        if (startingPoint) {
-            camera.attachControl(canvas, true);
-            startingPoint = null;
-            return;
-        }
-    }
-
-    var pointerMove = function () {
-        if (!startingPoint) {
-            return;
-        }
-        var current = getGroundPosition();
-        if (!current) {
-            return;
-        }
-
-        var diff = current.subtract(startingPoint);
-        currentMesh.position.addInPlace(diff);
-
-        startingPoint = current;
-
-    }
-
-    scene.onPointerObservable.add((pointerInfo) => {      		
-        switch (pointerInfo.type) {
-			case BABYLON.PointerEventTypes.POINTERDOWN:
-				if(pointerInfo.pickInfo.hit && pointerInfo.pickInfo.pickedMesh != ground) {
-                    pointerDown(pointerInfo.pickInfo.pickedMesh)
-                }
-				break;
-			case BABYLON.PointerEventTypes.POINTERUP:
-                    pointerUp();
-				break;
-			case BABYLON.PointerEventTypes.POINTERMOVE:          
-                    pointerMove();
-				break;
-        }
-    });
 
 
     return scene;
