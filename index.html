@@ -65,16 +65,16 @@
     // const camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 100, 800), scene);
 	
 	//Adding an Arc Rotate Camera
-    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 100, 200, new BABYLON.Vector3(0, 0, 0), scene);
+    var camera = new BABYLON.ArcRotateCamera("Camera", 0, 100, 800, new BABYLON.Vector3(0, 0, 0), scene);
 	camera.wheelDeltaPercentage =0.1;
 	camera.upperRadiusLimit = 1000
 	camera.panningSensibility = 100;
 	camera.targetScreenOffset.x = 0;
-	// camera.targetScreenOffset.y = -120;
-	camera.targetScreenOffset.y = -20;
+	camera.targetScreenOffset.y = -120;
+	// camera.targetScreenOffset.y = -20;
 
     // This positions the camera
-    camera.setPosition(new BABYLON.Vector3(100, 100, 200));
+    camera.setPosition(new BABYLON.Vector3(100, 100, 800));
 
     // This attaches the camera to the canvas
     camera.attachControl(canvas, true);
@@ -127,6 +127,8 @@
 	// scene.isPickable = false
 	
 	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "CraftsmanWoodWorkBench72.glb", scene);
+	
+	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "CraftsmanCabinet48.glb", scene);
 	
 	BABYLON.SceneLoader.ImportMesh("", "https://bkaimo.github.io/babylonjs-test1/", "StorageCabinetOrganizer_12Drawers.glb", scene);
 	
